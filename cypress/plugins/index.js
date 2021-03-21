@@ -20,18 +20,16 @@
 //   // `config` is the resolved Cypress config
 // }
 
-const fs = require('fs')
-const moment = require('moment')
+const fs = require("fs");
 module.exports = (on, config) => {
-  on('task', {
-    renameFile({currentName,renameTo}) {
+  on("task", {
+    renameFile({ currentName, renameTo }) {
       fs.rename(currentName, renameTo, function (err) {
-        if (err) throw err
-        return true
+        if (err) throw err;
+        return true;
       });
 
-      return false
-    }
-  })
-}
-
+      return false;
+    },
+  });
+};
